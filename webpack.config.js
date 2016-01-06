@@ -30,7 +30,7 @@ module.exports = {
   debug: true,
 
   entry: {
-    'vendor': './src/vendor.ts',
+    'vendor': ['webpack/hot/dev-server', './src/vendor.ts'],
     'main': './src/main.ts' // our angular app
   },
 
@@ -62,14 +62,17 @@ module.exports = {
             2375  // 2375 -> Duplicate string index signature
           ]
         },
+
         exclude: [ /\.(spec|e2e)\.ts$/, /node_modules\/(?!(ng2-.+))/ ]
       },
 
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
       // Support for *.json files.
       { test: /\.json$/,  loader: 'json-loader' },
-
-      // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'raw-loader' },
 
       // support for .html as raw text
       { test: /\.html$/,  loader: 'raw-loader' }
@@ -103,7 +106,13 @@ module.exports = {
     port: metadata.port,
     host: metadata.host,
     historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
+    watchOptions: { aggregateTimeout: 300, poll: 1000 },
+    proxy: {
+        '/api/*': {
+            target: 'http://localhost:3009',
+            secure: false
+        }
+    }
   },
   // we need this due to problems with es6-shim
   node: {global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false}

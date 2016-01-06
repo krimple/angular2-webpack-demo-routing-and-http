@@ -9,15 +9,25 @@
     "sourceMap": true
   },
   "files": [
-    "typings/main.d.ts",
-    "test/injector.spec.ts",
-    "test/sanity-test.spec.ts",
-    "src/app/app.spec.ts",
-    "src/app/home/home.spec.ts",
-    "src/app/home/directives/x-large.spec.ts",
-    "src/app/home/providers/title.spec.ts",
+    "src/app/bootstrap/containers/container.ts",
+    "src/app/bootstrap/containers/row.ts",
+    "src/app/bootstrap/components/alert/alert.ts",
+    "src/app/bootstrap/components/alert/alert-message.ts",
+    "src/app/bootstrap/components/menubar/menubar.ts",
+    "src/app/bootstrap/containers/row.ts",
+    "src/app/services/blog-service.ts",
+    "src/app/services/markdown-service.ts",
+    "src/app/services/message-service.ts",
+    "src/app/app.ts",
+    "src/app/services/blog-service.ts",
+    "src/app/services/markdown-service.ts",
+    "src/app/domain/blog-entry.ts",
+    "src/app/blog-editor/blog-editor.ts",
+    "src/app/blog-roll/blog-roll.ts",
+    "src/app/app-shell/app-shell.ts",
     "src/main.ts",
-    "src/vendor.ts"
+    "src/vendor.ts",
+    "typings/browser/ambient/marked/marked.d.ts"
   ],
   "filesGlob": [
     "./src/**/*.ts",
