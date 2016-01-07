@@ -4,4 +4,4 @@ import {HTTP_PROVIDERS} from "angular2/http";
 import {ROUTER_PROVIDERS} from 'angular2/router';
 
 
-bootstrap(AppShell, [HTTP_PROVIDERS, ROUTER_PROVIDERS]);
+var bootPromise = bootstrap(AppShell, [HTTP_PROVIDERS, ROUTER_PROVIDERS]);

@@ -25,6 +25,7 @@
     "./src/app/services/message-service.ts",
     "./src/main.ts",
     "./src/vendor.ts",
+    "./test/app/app.spec.ts",
     "./test/injector.spec.ts",
     "./test/sanity-test.spec.ts"
   ],
