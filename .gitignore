@@ -50,6 +50,9 @@ Thumbs.db
 /public/dist/
 /src/*/dist/
 /dist/**
+/src/**/*.js
+/src/**/*.js.map
+
 .webpack.json
 
 # Doc #
