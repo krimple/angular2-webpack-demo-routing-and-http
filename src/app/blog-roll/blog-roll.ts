@@ -31,6 +31,7 @@ export class BlogRoll {
     constructor(blogService: BlogService,
                 markdownService: MarkdownService,
                 router: Router) {
+        console.log('***** Initializing BlogRoll component ********');
         this.blogService = blogService;
         this.markdownService = markdownService;
         this.loadBlogEntries();
@@ -77,5 +78,3 @@ export class BlogRoll {
         this.message = undefined;
     }
 }
-
-

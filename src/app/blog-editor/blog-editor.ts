@@ -15,8 +15,5 @@ export class BlogEditor {
   blog: BlogEntry;
   constructor() {
     this.blog = new BlogEntry("Content", "Content", "This is content", 23);
-
-
   }
-
 }

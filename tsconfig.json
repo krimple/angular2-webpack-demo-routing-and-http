@@ -1,41 +1,39 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "removeComments": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "noEmitHelpers": false,
-        "sourceMap": true
-    },
-    "files": [
-        "./src/app/app-shell/app-shell.ts",
-        "./src/app/blog-editor/blog-editor.ts",
-        "./src/app/blog-roll/blog-roll.ts",
-        "./src/app/bootstrap/components/alert/alert-message.ts",
-        "./src/app/bootstrap/components/alert/alert.ts",
-        "./src/app/bootstrap/components/menubar/menubar.ts",
-        "./src/app/bootstrap/containers/container.ts",
-        "./src/app/bootstrap/containers/row.ts",
-        "./src/app/domain/blog-entry.ts",
-        "./src/app/services/blog-service.ts",
-        "./src/app/services/markdown-service.ts",
-        "./src/app/services/message-service.ts",
-        "./src/main.ts",
-        "./src/vendor.ts",
-        "./test/app/app-shell.spec.ts",
-        "./test/app/blog-roll/blog-roll.spec.ts",
-        "./test/app/services/blog-service.spec.ts",
-        "./test/injector.spec.ts"
-    ],
-    "filesGlob": [
-        "./src/**/*.ts",
-        "./test/**/*.ts",
-        "!./node_modules/**/*.ts"
-    ],
-    "compileOnSave": false,
-    "buildOnSave": false,
-    "atom": {
-        "rewriteTsconfig": true
-    }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": false,
+    "sourceMap": true
+  },
+  "files": [
+    "./src/app/app-shell/app-shell.ts",
+    "./src/app/blog-editor/blog-editor.ts",
+    "./src/app/blog-roll/blog-roll.ts",
+    "./src/app/bootstrap/components/alert/alert-message.ts",
+    "./src/app/bootstrap/components/alert/alert.ts",
+    "./src/app/bootstrap/components/menubar/menubar.ts",
+    "./src/app/bootstrap/containers/container.ts",
+    "./src/app/bootstrap/containers/row.ts",
+    "./src/app/domain/blog-entry.ts",
+    "./src/app/services/blog-service.ts",
+    "./src/app/services/markdown-service.ts",
+    "./src/app/services/message-service.ts",
+    "./src/main.ts",
+    "./src/vendor.ts",
+    "./test/app/blog-roll/blog-roll.spec.ts",
+    "./test/app/services/blog-service.spec.ts"
+  ],
+  "filesGlob": [
+    "./src/**/*.ts",
+    "./test/**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
