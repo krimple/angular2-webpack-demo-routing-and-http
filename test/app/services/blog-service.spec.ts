@@ -4,6 +4,7 @@ import {
   expect,
   it,
   inject,
+  injectAsync,
   beforeEachProviders
 } from 'angular2/testing';
 
@@ -33,22 +34,26 @@ describe('Blog Service', () => {
   });
 
   it('should fetch blog entries', () => {
-    backend.connections.subscribe(connection => {
-      connection.mockRespond(new Response(options.merge({
-        body: [
-          {
-            id: 234,
-            contentRendered: "<p><b>Hi there</b></p>",
-            contentMarkdown: "*Hi there*"
-          }]
-      })));
+    return new Promise((resolve) => {
+      backend.connections.subscribe(
+        (connection) => {
+          connection.mockRespond(new Response(options.merge({
+            body: [
+              {
+                id: 234,
+                contentRendered: "<p><b>Hi there</b></p>",
+                contentMarkdown: "*Hi there*"
+              }]
+          })));
+      });
 
+      blogService.getBlogs().subscribe(
+        (data) => {
+          expect(data.length).toBe(1);
+          expect(data[0].id).toBe(234);
+          expect(data[0].contentMarkdown).toBe('*Hi there*');
+        });
     });
-
-    blogService.getBlogs().subscribe((data) => {
-      expect(data.length).toBe(1);
-    });
-
   });
 
   it('should save updates to an existing blog entry', () => {
@@ -56,11 +61,14 @@ describe('Blog Service', () => {
       let data: BlogEntry = new BlogEntry("Blog Entry", "<p><b>Hi</b></p>", "*Hi*", 10);
       connection.mockRespond(new Response(options.merge({ status: 200 })));
 
-      blogService.saveBlog(data).subscribe((result) => {
-        console.log(result);
-        expect(result.status).toBe(2);
-      });
-
+      blogService.saveBlog(data).subscribe(
+        (successResult) => {
+          console.log(successResult);
+          expect(successResult.status).toBe(2);
+        },
+        (errorResult) => {
+          throw errorResult;
+        });
     });
   });
 });
