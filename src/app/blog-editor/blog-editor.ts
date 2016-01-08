@@ -1,3 +1,4 @@
+import {BlogEntry} from "../domain/blog-entry";
 import {Component} from 'angular2/core';
 @Component({
     template: `
@@ -11,5 +12,11 @@ import {Component} from 'angular2/core';
  `
 })
 export class BlogEditor {
+  blog: BlogEntry;
+  constructor() {
+    this.blog = new BlogEntry("Content", "Content", "This is content", 23);
+
+
+  }
 
 }
