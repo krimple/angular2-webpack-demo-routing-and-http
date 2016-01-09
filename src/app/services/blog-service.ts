@@ -5,6 +5,7 @@ import {Inject} from 'angular2/core';
 import {Injectable} from 'angular2/core';
 import {BlogEntry} from '../domain/blog-entry';
 import 'rxjs/add/operator/map';
+
 @Injectable()
 export class BlogService {
     opts: RequestOptions;
