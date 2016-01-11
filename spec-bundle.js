@@ -17,7 +17,6 @@ require('es7-reflect-metadata/dist/browser');
 require('zone.js/lib/browser/zone-microtask.js');
 require('zone.js/lib/browser/long-stack-trace-zone.js');
 require('zone.js/dist/jasmine-patch.js');
-
 /*
   Ok, this is kinda crazy. We can use the the context method on
   require that webpack created in order to tell webpack
@@ -30,6 +29,7 @@ require('zone.js/dist/jasmine-patch.js');
 var testContext = require.context('./test', true, /\.spec\.ts/);
 var appContext = require.context('./src', true, /\.spec\.ts/);
 
+require('marked/marked.min.js');
 // get all the files, for each file, call the context function
 // that will require the file and load it up here. Context will
 // loop and require those spec files here
@@ -40,4 +40,5 @@ testContext.keys().forEach(testContext);
 // see https://github.com/AngularClass/angular2-webpack-starter/issues/124
 var domAdapter = require('angular2/src/platform/browser/browser_adapter');
 domAdapter.BrowserDomAdapter.makeCurrent();
+
 

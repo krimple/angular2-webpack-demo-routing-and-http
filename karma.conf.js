@@ -17,7 +17,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     // we are building the test environment in ./spec-bundle.js
-    files: [ { pattern: 'spec-bundle.js', watched: false } ],
+    files: [
+      // hackity hack (KJR) - in order to get the marked markdown library
+      // into the Karma path, we have to add it before spec-bundle as a simple
+      // dependency not using require...  AHHH!  It's an ES5 simple library
+      // so for some reason THIS approach works better than editing
+      // spec-bundle.js which ignored our file.
+      'node_modules/marked/marked.min.js',
+      { pattern: 'spec-bundle.js', watched: false }
+    ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor

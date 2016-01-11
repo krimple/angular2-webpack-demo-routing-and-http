@@ -24,7 +24,9 @@
     "./src/main.ts",
     "./src/vendor.ts",
     "./test/app/blog-roll/blog-roll.spec.ts",
-    "./test/app/services/blog-service.spec.ts"
+    "./test/app/services/blog-service.spec.ts",
+    "./test/app/services/message-service.spec.ts",
+    "./test/app/services/markdown-service.spec.ts"
   ],
   "filesGlob": [
     "./src/**/*.ts",
