@@ -19,6 +19,6 @@ describe('Message service', () => {
   it('Should add messages', inject([MessageService], (messageService) => {
     messageService.add(new AlertMessage('This is an alert'));
     expect(messageService.messages.length).toBe(1);
-  });
+  }));
 
 });

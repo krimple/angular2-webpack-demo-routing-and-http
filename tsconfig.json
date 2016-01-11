@@ -24,6 +24,13 @@
     "./src/main.ts",
     "./src/vendor.ts",
     "./test/app/blog-roll/blog-roll.spec.ts",
+    "./test/app/blog-editor/blog-editor.spec.ts",
+    "./test/app/bootstrap/components/alert/alert-message.spec.ts",
+    "./test/app/bootstrap/components/alert/alert.spec.ts",
+    "./test/app/bootstrap/components/menubar/menubar.spec.ts",
+    "./test/app/bootstrap/containers/container.spec.ts",
+    "./test/app/bootstrap/containers/row.spec.ts",
+    "./test/app/domain/blog-entry.spec.ts",
     "./test/app/services/blog-service.spec.ts",
     "./test/app/services/message-service.spec.ts",
     "./test/app/services/markdown-service.spec.ts"
