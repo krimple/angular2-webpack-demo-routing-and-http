@@ -11,8 +11,7 @@ import { provide } from 'angular2/core';
 describe('Container', () => {
 
   it('should display menu content', injectAsync([TestComponentBuilder], (tcb) => {
-  var html = '<container>This is the body content</container>';
-  debugger;
+  var html = '<bs-container>This is the body content</bs-container>';
   return new Promise((resolve, reject) => {
     tcb.overrideTemplate(BootstrapContainer, html)
     .createAsync(BootstrapContainer)

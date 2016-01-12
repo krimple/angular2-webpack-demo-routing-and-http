@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 @Component({
-    selector: 'bsContainer',
+    selector: 'bootstrap-container',
     template: `
     <div class="container">
       <ng-content></ng-content>

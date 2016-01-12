@@ -21,7 +21,7 @@ import {
 @Component({
   selector: 'app-shell',
   template: `
-    <bsContainer>
+    <bootstrap-container>
         <menubar>
             <li class="pure-menu-item"><a [routerLink]="['BlogRoll']">Blog Roll</a></li>
             <li class="pure-menu-item"><a [routerLink]="['BlogEditor']">Blog Editor</a></li>
@@ -33,7 +33,7 @@ import {
        </row>
 
        <router-outlet></router-outlet>
-    </bsContainer>
+    </bootstrap-container>
     `,
   directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, BootstrapContainer, MenuBar, Alert],
   bindings: [MessageService]
