@@ -27,4 +27,13 @@ export class BlogService {
             return this.http.post('/api/blogs', blog.json(), this.opts);
         }
     }
+
+  getBlog(id: number): any {
+    return this.http.get('/api/blogs/' + id)
+    .map((res: Response) => {
+      console.log(res);
+      return BlogEntry.asBlogEntry(res.json());
+    });
+  }
+
 }

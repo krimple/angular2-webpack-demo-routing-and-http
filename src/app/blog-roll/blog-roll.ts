@@ -66,7 +66,7 @@ export class BlogRoll {
         this.blogService.saveBlog(blog)
             .subscribe(
                 (res: Response) => {
-                    this.router.navigate(['BlogEditorById', {id: blog.id}]);
+                    this.router.navigate(['BlogEditorById', { id: blog.id.toString() }]);
                 },
                 (error: Object) => {
                     console.log('error saving!', error);
