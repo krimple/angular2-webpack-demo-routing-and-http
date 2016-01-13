@@ -16,7 +16,6 @@ import {MockBackend} from 'angular2/http/testing';
 import {BlogEntry} from '../../../src/app/domain/blog-entry';
 import {MockConnection} from 'angular2/src/http/backends/mock_backend';
 import {ResponseOptions} from 'angular2/http';
-import {Injector} from 'angular2/core';
 
 describe('Blog Service', () => {
 

@@ -4,9 +4,8 @@ import {
 
 import { AsyncTestFn } from 'angular2/testing';
 
-import { BootstrapContainer } from ../../../../../src/app/bootstrap/containers/container';
-
 import { provide } from 'angular2/core';
+import {BootstrapContainer} from '../../../../src/app/bootstrap/containers/container';
 
 describe('Container', () => {
 

@@ -10,12 +10,12 @@ describe('Alert Component', () => {
 
   it('should display message', injectAsync([TestComponentBuilder], (tcb) => {
     return tcb.createAsync(Alert).then((fixture) => {
-      debugger;
-      fixture.debugElement.componentInstance.message = { text: "boo!"};
+      fixture.debugElement.componentInstance.message = {text: "boo!"};
       fixture.detectChanges();
       var compiled = fixture.debugElement.nativeElement;
       expect(compiled.innerHTML).toContain("boo!");
-      });
+
+    });
   }));
 
 });

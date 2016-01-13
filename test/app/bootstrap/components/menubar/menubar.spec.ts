@@ -12,7 +12,6 @@ describe('MenuBar', () => {
 
   it('should display menu content', injectAsync([TestComponentBuilder], (tcb) => {
   var html = '<menubar>This is the body content</menubar>';
-  debugger;
   return new Promise((resolve, reject) => {
     tcb.overrideTemplate(MenuBar, html)
     .createAsync(MenuBar)

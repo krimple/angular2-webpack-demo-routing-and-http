@@ -23,21 +23,21 @@ import {MarkdownService} from '../services/markdown-service';
 })
 export class BlogRoll {
     blogs: Array<BlogEntry>;
-    blogService: BlogService;
     router: Router;
     message: string;
     markdownService: MarkdownService;
 
-    constructor(blogService: BlogService,
+    constructor(private blogService: BlogService,
                 markdownService: MarkdownService,
                 router: Router) {
         console.log('***** Initializing BlogRoll component ********');
-        this.blogService = blogService;
         this.markdownService = markdownService;
+        this.router = router;
         this.loadBlogEntries();
     }
 
     loadBlogEntries() {
+      debugger;
         this.blogService.getBlogs().subscribe(
             (data: Array<BlogEntry>) => {
                 console.log('data is', data);
