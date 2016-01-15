@@ -1,25 +1,25 @@
 import {Component} from 'angular2/core';
-import {Row} from '../bootstrap/containers/row';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {Router} from 'angular2/router';
 import {Response} from 'angular2/http';
 import {BlogEntry} from '../domain/blog-entry.ts';
 import {BlogService} from '../services/blog-service';
 import {MarkdownService} from '../services/markdown-service';
+import {BootstrapCol} from '../bootstrap/containers/bscol';
+import {BootstrapRow} from '../bootstrap/containers/bsrow';
 
 @Component({
     bindings: [BlogService, MarkdownService],
     template: `
-
-    <row *ngFor="#blog of blogs">
+    <bs-row *ngFor="#blog of blogs">
          <h3>{{ blog.title }}</h3>
-         <h4 (click)="editBlogEntry(blog)">Live Preview - Click to open editor...</h4>
-         <div style="width: 100%; height: 5em%;"
-               [innerHtml]="blog.contentRendered"></div>
-    </row>
-        `,
+         <bs-col class="col-6"
+               [innerHtml]="blog.contentRendered"></bs-col>
+        <bs-col class="col-3"><button (click)="editBlogEntry(blog)">Edit</button></bs-col>
+    </bs-row>
+    `,
     selector: 'blog-roll',
-    directives: [CORE_DIRECTIVES, Row]
+    directives: [CORE_DIRECTIVES, BootstrapRow, BootstrapCol]
 })
 export class BlogRoll {
     blogs: Array<BlogEntry>;
@@ -37,7 +37,6 @@ export class BlogRoll {
     }
 
     loadBlogEntries() {
-      debugger;
         this.blogService.getBlogs().subscribe(
             (data: Array<BlogEntry>) => {
                 console.log('data is', data);

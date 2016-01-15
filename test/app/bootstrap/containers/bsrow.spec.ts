@@ -6,7 +6,7 @@ import {
 
 import { AsyncTestFn } from 'angular2/testing';
 
-import { Row } from '../../../../src/app/bootstrap/containers/row';
+import { BootstrapRow } from '../../../../src/app/bootstrap/containers/bsrow';
 
 import { provide } from 'angular2/core';
 
@@ -15,10 +15,10 @@ import { provide } from 'angular2/core';
 describe('BootstrapRow', () => {
 
   it('should display menu content', injectAsync([TestComponentBuilder], (tcb) => {
-  var html = '<row>This is the body content</row>';
+  var html = '<bs-row>This is the body content</bs-row>';
   return new Promise((resolve, reject) => {
-    tcb.overrideTemplate(Row, html)
-    .createAsync(Row)
+    tcb.overrideTemplate(BootstrapRow, html)
+    .createAsync(BootstrapRow)
     .then(
         (fixture) => {
            fixture.detectChanges();

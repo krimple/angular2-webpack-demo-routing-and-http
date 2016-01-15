@@ -2,9 +2,15 @@
   "blogs": [
     {
       "title": "But is it fun to do?",
-      "contentRendered": "<h2 id=\"this-is-a-new-one\">This is a new one</h2>\n<ul>\n<li>one</li>\n<li>two</li>\n<li>thre</li>\n</ul>\n",
-      "contentMarkdown": "## This is a new one\n\n* one\n* two\n* thre",
+      "contentRendered": "<p>asdfasfas\nfasd\nfas\ndf</p>\n<ul>\n<li>A </li>\n<li>B</li>\n<li>C</li>\n</ul>\n",
+      "contentMarkdown": "asdfasfas\nfasd\nfas\ndf\n* A \n* B\n* C\n",
       "id": 2
+    },
+    {
+      "title": "New thing",
+      "contentRendered": "<p>Wow it is!</p>\n<ul>\n<li>One </li>\n<li>Two</li>\n<li>Three</li>\n</ul>\n<h3 id=\"fun-fun-fun\">FUN FUN FUN</h3>\n",
+      "contentMarkdown": "Wow it is!\n* One \n* Two\n* Three\n\n### FUN FUN FUN\n\n",
+      "id": 3
     }
   ]
 }

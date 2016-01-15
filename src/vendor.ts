@@ -1,6 +1,7 @@
 // Polyfills
 import 'es6-shim';
 // (these modules are what are in 'angular2/bundles/angular2-polyfills' so don't use that here)
+
 import 'es6-promise';
 import 'zone.js/lib/browser/zone-microtask';
 
@@ -17,6 +18,17 @@ if ('production' === process.env.ENV) {
   let ngCore = require('angular2/core');
   ngCore.enableProdMode();
 }
+
+// TODO: enourmous hack!!!
+// ES5 modules cannot be imported anonymously
+// however, vendor.ts doesn't import ES5 modules
+// so we cheat - the Marked library can be assigned
+// to window, but only as a property using the index syntax
+// since the Window object definition doesn't take it.
+// Can't there be an easier way to do this????
+import marked = require('marked');
+window['marked'] = marked;
+
 // Angular 2
 import 'angular2/platform/browser';
 import 'angular2/platform/common_dom';
